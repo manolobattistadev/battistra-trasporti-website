@@ -10,7 +10,7 @@ const robotoSans = Roboto({
 
 export const metadata: Metadata = {
   title: "Battista Trasporti s.a.s - Servizi di Trasporto Dedicato su Misura",
-  description: "Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland",
+  description: "Servizi di Trasporto Dedicato su Misura a Milano e Hinterland: Consegne Veloci, Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.",
 };
 
 // const domain = 'https://www.battistatrasporti.it'

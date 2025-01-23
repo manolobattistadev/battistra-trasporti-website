@@ -19,13 +19,14 @@ export default function Home() {
 
   const services = [
       {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità.'},
-      {icon: '👗', title: 'Moda & Shooting', description: 'Da anni siamo specializzati nei servizi moda & shooting fotografici'},
+      {icon: '👗', title: 'Moda', description: 'Da anni siamo specializzati nei servizi moda'},
+      {icon: '📷', title: 'Shooting fotografici', description: 'Trasportiamo attrezzatura fotografica con cura e precisione'},
       {icon: '🔒', title: 'Sicurezza garantita', description: 'Monitoraggio costante e cura massima del tuo carico.'},
       {icon: '⏱️', title: 'Rapidità e puntualità', description: 'Ogni spedizione è progettata intorno alle tue necessità.'},
-      {icon: '🌍', title: 'Copertura estesa', description: 'Operiamo a Milano e su tutto il territorio  nazionale.'},
+      {icon: '🌍', title: 'Copertura estesa', description: 'Operiamo a Milano e su tutto il territorio nazionale.'},
       {icon: '🚪', title: 'Door-to-door', description: 'Ritiro e consegna direttamente presso le sedi richieste.'},
       {icon: '📦', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose.'},
-      {icon: '🔄', title: 'Servizi di logistica', description: 'Supporto nella gestione completa della catena di distribuzione'},
+      // {icon: '🔄', title: 'Servizi di logistica', description: 'Supporto nella gestione completa della catena di distribuzione'},
   ];
 
   function onMailRequest(){
@@ -67,12 +68,12 @@ export default function Home() {
               {/* Intro */}
               <div className="px-8 sm:px-16 py-0 pb-0 grid grid-cols-12 items-center">
                   <div className="col-span-12 sm:col-span-8 flex flex-col gap-4">
-                      <p className="mt-8 sm:mt-0 text-gray-600 uppercase ml-1">Battista Trasporti s.a.s</p>
-                      <p className="text-4xl md:text-7xl font-bold" style={{lineHeight: '100px'}}>Ritiri e consegne<br/> per Milano e hinterland</p>
-                      <p className="text-gray-600 text-lg leading-[40px]">
-                          Servizi di Trasporto Dedicato su Misura: Consegne Veloci,<br/>
-                          Sicure e Puntuali per la Moda
-                      </p>
+                      <h3 className="mt-8 sm:mt-0 text-gray-600 uppercase ml-1">Battista Trasporti s.a.s</h3>
+                      <h1 className="text-4xl md:text-7xl font-bold" style={{lineHeight: '100px'}}>Ritiri e consegne<br/> per Milano e hinterland</h1>
+                      <h2 className="text-gray-600 text-lg leading-[40px] sm:w-2/3">
+                          Servizi di Trasporto Dedicato su misura in tutta italia: Consegne Veloci,
+                          Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.
+                      </h2>
 
                       <div className="flex gap-4">
                           <a href="#contact-us">
@@ -118,15 +119,14 @@ export default function Home() {
                           priority
                       />
                       <p className="mt-8 text-gray-600 text-lg leading-[40px]">
-                          Specializzati in trasporti dedicati per aziende di ogni settore, offriamo servizi
+                          Specializzati in <b>trasporti dedicati</b> per aziende di ogni settore, offriamo servizi
                           door-to-door,
                           gestione
-                          urgente delle spedizioni e massima flessibilità per soddisfare ogni tua esigenza logistica. La
+                          urgente delle spedizioni e <b>massima flessibilità</b> per soddisfare ogni tua esigenza logistica. La
                           nostra
                           missione è portare il tuo carico al successo!<br/>
-                          Affidati alla professionalità e all’attenzione al dettaglio di Roberto Battista e del suo
-                          team.
-                          Richiedi subito un preventivo personalizzato: la tua soddisfazione è il nostro obiettivo!
+                          Affidati alla professionalità e all’<b>attenzione al dettaglio</b> di Roberto Battista e del suo
+                          team. Richiedi subito un preventivo personalizzato: la tua soddisfazione è il nostro obiettivo!
                       </p>
                   </div>
               </div>
@@ -198,7 +198,7 @@ export default function Home() {
                           width={0}
                           height={0}
                           sizes="100vw"
-                          className="rounded-2xl mt-12 w-2/3 h-auto"
+                          className="rounded-2xl w-2/3 h-auto max-h-[460px]"
                           priority
                       />
                   </div>

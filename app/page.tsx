@@ -18,14 +18,14 @@ export default function Home() {
     const [notes, setNotes] = useState<string>("");
 
   const services = [
-      {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità.'},
+      {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità'},
       {icon: '👗', title: 'Moda', description: 'Da anni siamo specializzati nei servizi moda'},
       {icon: '📷', title: 'Shooting fotografici', description: 'Trasportiamo attrezzatura fotografica con cura e precisione'},
-      {icon: '🔒', title: 'Sicurezza garantita', description: 'Monitoraggio costante e cura massima del tuo carico.'},
-      {icon: '⏱️', title: 'Rapidità e puntualità', description: 'Ogni spedizione è progettata intorno alle tue necessità.'},
-      {icon: '🌍', title: 'Copertura estesa', description: 'Operiamo a Milano e su tutto il territorio nazionale.'},
-      {icon: '🚪', title: 'Door-to-door', description: 'Ritiro e consegna direttamente presso le sedi richieste.'},
-      {icon: '📦', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose.'},
+      {icon: '🔒', title: 'Sicurezza garantita', description: 'Monitoraggio costante e cura massima del tuo carico'},
+      {icon: '⏱️', title: 'Rapidità e puntualità', description: 'Ogni spedizione è progettata intorno alle tue necessità'},
+      {icon: '🌍', title: 'Copertura estesa', description: 'Operiamo a Milano e su tutto il territorio nazionale'},
+      {icon: '🚪', title: 'Door-to-door', description: 'Ritiro e consegna direttamente presso le sedi richieste'},
+      {icon: '📦', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose'},
       // {icon: '🔄', title: 'Servizi di logistica', description: 'Supporto nella gestione completa della catena di distribuzione'},
   ];
 
@@ -64,12 +64,13 @@ export default function Home() {
           </div>
 
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-
               {/* Intro */}
               <div className="px-8 sm:px-16 py-0 pb-0 grid grid-cols-12 items-center">
                   <div className="col-span-12 sm:col-span-8 flex flex-col gap-4">
                       <h3 className="mt-8 sm:mt-0 text-gray-600 uppercase ml-1">Battista Trasporti s.a.s</h3>
-                      <h1 className="text-4xl md:text-7xl font-bold" style={{lineHeight: '100px'}}>Ritiri e consegne<br/> per Milano e hinterland</h1>
+                      <h1 className="text-4xl md:text-7xl font-bold leading-[50px] md:leading-[100px]">
+                          Ritiri e consegne<br/> per Milano e hinterland
+                      </h1>
                       <h2 className="text-gray-600 text-lg leading-[40px] sm:w-2/3">
                           Servizi di Trasporto Dedicato su misura in tutta italia: Consegne Veloci,
                           Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.
@@ -157,7 +158,7 @@ export default function Home() {
 
 
               {/* Special services */}
-              <div className="mt-8 px-16 sm:grid sm:grid-cols-12 gap-8">
+              <div className="mt-8 px-8 sm:px-16 sm:grid sm:grid-cols-12 gap-8">
                   <div className="col-span-12 sm:col-span-7">
                       <p className="text-5xl font-bold mb-8">Servizi speciali</p>
                       <p className="text-gray-600 text-lg leading-[40px]">
@@ -171,18 +172,18 @@ export default function Home() {
                               carichi di grandi dimensioni
                               e volumi elevati, assicurando puntualità e affidabilità.
                           </li>
-                          <li>
+                          <li className="mt-2">
                               <i className="font-bold">Furgoni refrigerati</i>: perfetti per il trasporto a
                               temperatura controllata di alimenti,
                               farmaci e altri prodotti deperibili. Manteniamo la catena del freddo intatta durante
                               ogni spostamento.
                           </li>
-                          <li>
+                          <li className="mt-2">
                               <i className="font-bold">Assistenza tecnica al carico e scarico</i>: supporto
                               qualificato per garantire la massima
                               cura e sicurezza in ogni fase del trasporto, riducendo al minimo il rischio di danni.
                           </li>
-                          <li>
+                          <li className="mt-2">
                               <i className="font-bold">Trasporto merci delicate</i>: soluzioni dedicate per beni
                               fragili o di alto valore, con un
                               trattamento personalizzato per ogni esigenza.
@@ -205,7 +206,7 @@ export default function Home() {
               </div>
 
               {/* Contact us */}
-              <div id="contact-us" className="w-full mt-8 px-12">
+              <div id="contact-us" className="w-full mt-8 px-8 sm:px-16">
                   <div className="w-full col-span-12">
                       <p className="text-5xl font-bold mb-8">Richiedi preventivo</p>
                       <p className="text-gray-600 text-lg leading-[40px] mb-8">
@@ -261,11 +262,10 @@ export default function Home() {
                                   placeholder="Ho bisogno di trasportare..."
                               />
                           </div>
-                          <div className="mt-4 flex gap-8 items-center">
-                              <Button variant="default" className="w-60"
-                              onClick={() => onMailRequest()}
-                              >Invia richiesta</Button>
-                              <p>Hai un’esigenza particolare? Parliamone telefonicamente 😉</p>
+                          <div className="mt-4 sm:flex gap-8 items-center">
+                              <Button variant="default" className="w-full sm:w-60"
+                              onClick={() => onMailRequest()}>Invia richiesta</Button>
+                              <p className="mt-4 sm:mt-0">Hai un’esigenza particolare? Parliamone telefonicamente 😉</p>
                           </div>
                       </div>
                   </div>

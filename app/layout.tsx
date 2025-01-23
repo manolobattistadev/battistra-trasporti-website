@@ -22,22 +22,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <head>
-          <meta property="og:title" content="Ritiri e Consegne in tutta Italia"/>
-          <meta property="og:description" content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
-          <meta property="og:type" content="website"/>
-          <meta property="og:url" content={domain}/>
-          <meta property="og:image" content={`${domain}/logo.png`}/>
-          <meta name="twitter:card" content="summary_large_image"/>
-          <meta name="twitter:title" content="Ritiri e Consegne in tutta Italia"/>
-          <meta name="twitter:description" content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
-          <meta name="twitter:image" content={`${domain}/logo.png`}/>
-      </head>
-      <body
+    <head>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+        <link rel="manifest" href="/site.webmanifest"/>
+        <meta property="og:title" content="Ritiri e Consegne in tutta Italia"/>
+        <meta property="og:description"
+              content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:url" content={domain}/>
+        <meta property="og:image" content={`${domain}/logo.png`}/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="Ritiri e Consegne in tutta Italia"/>
+        <meta name="twitter:description"
+              content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
+        <meta name="twitter:image" content={`${domain}/logo.png`}/>
+    </head>
+    <body
         className={`${robotoSans.variable} ${robotoSans.variable} antialiased`}
-      >
-        {children}
-      </body>
+    >
+    {children}
+    </body>
     </html>
   );
 }

@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import {PhoneIcon} from "@heroicons/react/16/solid";
 import {Button} from "@/components/ui/button";
@@ -6,8 +7,15 @@ import {Label} from "@/components/ui/label";
 import {Textarea} from "@/components/ui/textarea";
 import Link from "next/link";
 import Navbar from "@/components/navbar";
+import WhatsappIcon from "@/components/whatsapp-icon";
+import {useState} from "react";
 
 export default function Home() {
+    const [name, setName] = useState<string>("");
+    const [company, setCompany] = useState<string>("");
+    const [email, setEmail] = useState<string>("");
+    const [phone, setPhone] = useState<string>("");
+    const [notes, setNotes] = useState<string>("");
 
   const services = [
       {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità.'},
@@ -20,35 +28,54 @@ export default function Home() {
       {icon: '🔄', title: 'Servizi di logistica', description: 'Supporto nella gestione completa della catena di distribuzione'},
   ];
 
+  function onMailRequest(){
+      const mailto = "battistatrasporti1963@gmail.com";
+      const subject = 'Richiesta preventivo'
+      let body = "Ciao Roberto,\r\r{notes}\r\rGrazie,\r{name}\r{phone}\r{email}\r{company}"
+      body = body.replace(`{notes}`, notes ?? '');
+      body = body.replace(`{name}`, name?? '');
+      body = body.replace(`{phone}`, phone?? '');
+      body = body.replace(`{email}`, email?? '');
+      body = body.replace(`{company}`, company ?? '');
+      window.location.href = `mailto:${mailto}?subject=${subject}&body=${encodeURIComponent(body)}`;
+  }
+
 
   return (
       <div className="min-h-screen gap-2">
-          <div
-              className="shadow-xl cursor-pointer fixed top-8 right-0 bg-black p-2 px-4 rounded-tl-md rounded-bl-md text-white flex gap-2">
-              <a href="tel:+39335453733" className="flex gap-4">
+          <a href="tel:+39335453733" className="cursor-pointer flex gap-4">
+              <div
+                  className="shadow-xl cursor-pointer fixed top-8 right-0 bg-black p-2 px-4 rounded-tl-md rounded-bl-md text-white flex gap-2">
                   <PhoneIcon className="w-6"/>
-                  <div className="flex flex-col">
+                  <div className="hidden sm:flex flex-col">
                       Richiedi preventivo
                       <p>+39 335453733</p>
                   </div>
+            </div>
+          </a>
+        <Navbar/>
+
+    <div
+        className="shadow-xl cursor-pointer fixed bottom-8 right-8 bg-black p-2 px-4 rounded-full text-white flex gap-2">
+              <a href="https://wa.me/+39335453733" className="flex gap-4" target="_blank">
+                  <WhatsappIcon />
               </a>
           </div>
-          <Navbar/>
 
           <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 
               {/* Intro */}
-              <div className="px-16 py-0 pb-0 grid grid-cols-12 items-center">
-                  <div className="col-span-8 flex flex-col gap-4">
-                      <p className="text-gray-600">BATTISTA TRASPORTI S.A.S</p>
-                      <p className="text-7xl font-bold">Ritiri e consegne<br/> in tutta Italia</p>
+              <div className="px-8 sm:px-16 py-0 pb-0 grid grid-cols-12 items-center">
+                  <div className="col-span-12 sm:col-span-8 flex flex-col gap-4">
+                      <p className="mt-8 sm:mt-0 text-gray-600 uppercase ml-1">Battista Trasporti s.a.s</p>
+                      <p className="text-4xl md:text-7xl font-bold" style={{lineHeight: '100px'}}>Ritiri e consegne<br/> per Milano e hinterland</p>
                       <p className="text-gray-600 text-lg leading-[40px]">
                           Servizi di Trasporto Dedicato su Misura: Consegne Veloci,<br/>
-                          Sicure e Puntuali per Milano e hinterland
+                          Sicure e Puntuali per la Moda
                       </p>
 
                       <div className="flex gap-4">
-                          <a href="#quotation">
+                          <a href="#contact-us">
                               <Button variant="default" className="w-40">Contattaci adesso</Button>
                           </a>
                           <a href="#services">
@@ -56,7 +83,7 @@ export default function Home() {
                           </a>
                       </div>
                   </div>
-                  <div className="col-span-4 flex justify-center">
+                  <div className="hidden sm:flex col-span-4 justify-center">
                       <Image
                           src="/battista_home.png"
                           alt="Battista Trasporti"
@@ -69,7 +96,7 @@ export default function Home() {
               </div>
 
 
-              <div id="who-we-are" className="px-16 grid grid-cols-12">
+              <div id="who-we-are" className="mt-4 sm:mt-0 px-8 sm:px-16 grid grid-cols-12">
                   {/* Who we are */}
                   <div className="col-span-12">
                       <p className="text-5xl font-bold mb-8">Chi siamo</p>
@@ -130,41 +157,41 @@ export default function Home() {
 
 
               {/* Special services */}
-              <div className="mt-8 px-16 grid grid-cols-12 gap-8">
-                  <div className="col-span-7">
+              <div className="mt-8 px-16 sm:grid sm:grid-cols-12 gap-8">
+                  <div className="col-span-12 sm:col-span-7">
                       <p className="text-5xl font-bold mb-8">Servizi speciali</p>
                       <p className="text-gray-600 text-lg leading-[40px]">
                           Offriamo una vasta gamma di servizi speciali, progettati per rispondere alle esigenze più
                           specifiche dei nostri clienti. Grazie alla collaborazione con partner esperti e affidabili,
                           garantiamo soluzioni logistiche efficienti e sicure. I nostri servizi includono:
-                          <ul className="p-4 list-disc">
-                              <li>
-                                  <i className="font-bold">Trasporti con bilici e mezzi pesanti</i>: ideali per gestire
-                                  carichi di grandi dimensioni
-                                  e volumi elevati, assicurando puntualità e affidabilità.
-                              </li>
-                              <li>
-                                  <i className="font-bold">Furgoni refrigerati</i>: perfetti per il trasporto a
-                                  temperatura controllata di alimenti,
-                                  farmaci e altri prodotti deperibili. Manteniamo la catena del freddo intatta durante
-                                  ogni spostamento.
-                              </li>
-                              <li>
-                                  <i className="font-bold">Assistenza tecnica al carico e scarico</i>: supporto
-                                  qualificato per garantire la massima
-                                  cura e sicurezza in ogni fase del trasporto, riducendo al minimo il rischio di danni.
-                              </li>
-                              <li>
-                                  <i className="font-bold">Trasporto merci delicate</i>: soluzioni dedicate per beni
-                                  fragili o di alto valore, con un
-                                  trattamento personalizzato per ogni esigenza.
-                              </li>
-                          </ul>
-
-                          Con Battista Trasporti, ogni carico è in mani sicure! 🚛
                       </p>
+                      <ul className="p-4 list-disc">
+                          <li>
+                              <i className="font-bold">Trasporti con bilici e mezzi pesanti</i>: ideali per gestire
+                              carichi di grandi dimensioni
+                              e volumi elevati, assicurando puntualità e affidabilità.
+                          </li>
+                          <li>
+                              <i className="font-bold">Furgoni refrigerati</i>: perfetti per il trasporto a
+                              temperatura controllata di alimenti,
+                              farmaci e altri prodotti deperibili. Manteniamo la catena del freddo intatta durante
+                              ogni spostamento.
+                          </li>
+                          <li>
+                              <i className="font-bold">Assistenza tecnica al carico e scarico</i>: supporto
+                              qualificato per garantire la massima
+                              cura e sicurezza in ogni fase del trasporto, riducendo al minimo il rischio di danni.
+                          </li>
+                          <li>
+                              <i className="font-bold">Trasporto merci delicate</i>: soluzioni dedicate per beni
+                              fragili o di alto valore, con un
+                              trattamento personalizzato per ogni esigenza.
+                          </li>
+                      </ul>
+
+                      <p>Con Battista Trasporti, ogni carico è in mani sicure! 🚛</p>
                   </div>
-                  <div className="col-span-5 flex justify-center">
+                  <div className="hidden sm:flex sm:col-span-5 justify-center">
                       <Image
                           src="/battista_servizi_speciali.png"
                           alt="Battista servizi speciali"
@@ -178,7 +205,7 @@ export default function Home() {
               </div>
 
               {/* Contact us */}
-              <div id="contact-us" className="w-full mt-8 px-12 grid grid-cols-12 gap-8">
+              <div id="contact-us" className="w-full mt-8 px-12">
                   <div className="w-full col-span-12">
                       <p className="text-5xl font-bold mb-8">Richiedi preventivo</p>
                       <p className="text-gray-600 text-lg leading-[40px] mb-8">
@@ -192,6 +219,7 @@ export default function Home() {
                                   type="name"
                                   id="name"
                                   placeholder="Inserisci il tuo nome"
+                                  onChange={(e) => setName(e.target.value)}
                               />
                           </div>
                           <div className="w-full items-center gap-1.5">
@@ -200,6 +228,7 @@ export default function Home() {
                                   className="w-full"
                                   type="name"
                                   id="company"
+                                  onChange={(e) => setCompany(e.target.value)}
                                   placeholder="Inserisci la ragione sociale"
                               />
                           </div>
@@ -209,6 +238,7 @@ export default function Home() {
                                   className="w-full"
                                   type="email"
                                   id="email"
+                                  onChange={(e) => setEmail(e.target.value)}
                                   placeholder="Inserisci la tua email"
                               />
                           </div>
@@ -218,6 +248,7 @@ export default function Home() {
                                   className="w-full"
                                   type="tel"
                                   id="phone"
+                                  onChange={(e) => setPhone(e.target.value)}
                                   placeholder="Inserisci il tuo numero di telefono"
                               />
                           </div>
@@ -226,11 +257,14 @@ export default function Home() {
                               <Textarea
                                   className="w-full"
                                   id="notes"
+                                  onChange={(e) => setNotes(e.target.value)}
                                   placeholder="Ho bisogno di trasportare..."
                               />
                           </div>
                           <div className="mt-4 flex gap-8 items-center">
-                              <Button variant="default" className="w-60">Invia richiesta</Button>
+                              <Button variant="default" className="w-60"
+                              onClick={() => onMailRequest()}
+                              >Invia richiesta</Button>
                               <p>Hai un’esigenza particolare? Parliamone telefonicamente 😉</p>
                           </div>
                       </div>
@@ -238,7 +272,7 @@ export default function Home() {
               </div>
           </main>
 
-          <div className="flex justify-center h-40">
+          <div className="flex justify-center mt-12 h-40">
               <Image
                   src="/logo.png"
                   alt="Battista Trasporti logo"
@@ -253,16 +287,20 @@ export default function Home() {
               className="p-4 bg-gradient-to-r from-red-500 to-orange-500">
               <div className="text-white w-full flex justify-center text-center leading-[40px]">
                   <div className="col-span-12">
-                      <p className="uppercase">
+                      <p className="font-bold text-xs sm:text-base uppercase">
                           Battista Trasporti s.a.s di Roberto Battista & C.
                       </p>
-                      <p className="uppercase">
-                          Via Felice Cavallotti 134 - 26841 - Casalpusterlengo (LO)
+                      <p className="italic text-xs uppercase">
+                          Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO)
                       </p>
-                      <a href="mailto:battistatrasporti1963@gmail.com" className="underline">
+                      <a href="mailto:battistatrasporti1963@gmail.com"
+                         target="_blank"
+                         className="mt-4 text-xs sm:text-base underline">
                           battistatrasporti1963@gmail.com
                       </a>
-                      <a href="tel:+39335453733" className="underline flex justify-center gap-2">
+                      <a href="tel:+39335453733"
+                         target="_blank"
+                         className="text-xs sm:text-base flex items-center justify-center gap-2">
                           <PhoneIcon className="w-6"/>
                           +39 335453733
                       </a>

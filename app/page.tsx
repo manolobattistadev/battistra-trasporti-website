@@ -167,23 +167,23 @@ export default function Home() {
                           garantiamo soluzioni logistiche efficienti e sicure. I nostri servizi includono:
                       </p>
                       <ul className="p-4 list-disc">
-                          <li>
+                          <li className="text-gray-600">
                               <i className="font-bold">Trasporti con bilici e mezzi pesanti</i>: ideali per gestire
                               carichi di grandi dimensioni
                               e volumi elevati, assicurando puntualità e affidabilità.
                           </li>
-                          <li className="mt-2">
+                          <li className="text-gray-600 mt-2">
                               <i className="font-bold">Furgoni refrigerati</i>: perfetti per il trasporto a
                               temperatura controllata di alimenti,
                               farmaci e altri prodotti deperibili. Manteniamo la catena del freddo intatta durante
                               ogni spostamento.
                           </li>
-                          <li className="mt-2">
+                          <li className="text-gray-600 mt-2">
                               <i className="font-bold">Assistenza tecnica al carico e scarico</i>: supporto
                               qualificato per garantire la massima
                               cura e sicurezza in ogni fase del trasporto, riducendo al minimo il rischio di danni.
                           </li>
-                          <li className="mt-2">
+                          <li className="text-gray-600 mt-2">
                               <i className="font-bold">Trasporto merci delicate</i>: soluzioni dedicate per beni
                               fragili o di alto valore, con un
                               trattamento personalizzato per ogni esigenza.

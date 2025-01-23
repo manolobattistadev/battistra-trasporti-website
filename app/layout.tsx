@@ -27,7 +27,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
         <link rel="manifest" href="/site.webmanifest"/>
-        <meta property="og:title" content="Ritiri e Consegne in tutta Italia"/>
+        <meta property="og:title" content="Battista Trasporti s.a.s - Servizi di Trasporto Dedicato su Misura"/>
         <meta property="og:description"
               content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
         <meta property="og:type" content="website"/>

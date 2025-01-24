@@ -1,14 +1,14 @@
 'use client'
 import Image from "next/image";
-import {PhoneIcon} from "@heroicons/react/16/solid";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {Textarea} from "@/components/ui/textarea";
-import Link from "next/link";
 import Navbar from "@/components/navbar";
 import WhatsappIcon from "@/components/whatsapp-icon";
 import {useState} from "react";
+import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
+import Footer from "@/components/footer";
 
 export default function Home() {
     const [name, setName] = useState<string>("");
@@ -44,29 +44,23 @@ export default function Home() {
 
   return (
       <div className="min-h-screen gap-2">
-          <a href="tel:+39335453733" className="cursor-pointer flex gap-4">
-              <div
-                  className="shadow-xl cursor-pointer fixed top-8 right-0 bg-black p-2 px-4 rounded-tl-md rounded-bl-md text-white flex gap-2">
-                  <PhoneIcon className="w-6"/>
-                  <div className="hidden sm:flex flex-col">
-                      Richiedi preventivo
-                      <p>+39 335453733</p>
-                  </div>
-            </div>
-          </a>
-        <Navbar/>
-
-    <div
-        className="shadow-xl cursor-pointer fixed bottom-8 right-8 bg-black p-2 px-4 rounded-full text-white flex gap-2">
+        <ContactUsFloatingBtn/>
+          <Navbar>
+              <a href="#who-we-are" className="cursor-pointer text-nowrap">Chi siamo</a>
+              <a href="#services" className="cursor-pointer text-nowrap">Servizi</a>
+              <a href="#contact-us" className="cursor-pointer text-nowrap">Contattaci</a>
+          </Navbar>
+          <div
+              className="shadow-xl cursor-pointer fixed bottom-8 right-8 bg-black p-2 px-4 rounded-full text-white flex gap-2">
               <a href="https://wa.me/+39335453733" className="flex gap-4" target="_blank">
                   <WhatsappIcon />
               </a>
           </div>
 
-          <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
+          <main className="mt-8 flex flex-col gap-8 row-start-2 items-center sm:items-start">
               {/* Intro */}
               <div className="px-8 sm:px-16 py-0 pb-0 grid grid-cols-12 items-center">
-                  <div className="col-span-12 sm:col-span-8 flex flex-col gap-4">
+                  <div className="col-span-12 sm:col-span-7 flex flex-col gap-4">
                       <h3 className="mt-8 sm:mt-0 text-gray-600 uppercase ml-1">Battista Trasporti s.a.s</h3>
                       <h1 className="text-4xl md:text-7xl font-bold leading-[50px] md:leading-[100px]">
                           Ritiri e consegne<br/> per Milano e hinterland
@@ -85,14 +79,15 @@ export default function Home() {
                           </a>
                       </div>
                   </div>
-                  <div className="hidden sm:flex col-span-4 justify-center">
+                  <div className="hidden sm:flex sm:col-span-5 justify-center">
                       <Image
                           src="/battista_home.png"
                           alt="Battista Trasporti"
-                          width={480}
-                          height={38}
+                          width={0}
+                          height={0}
+                          sizes="100vw"
+                          className="w-full h-auto"
                           priority
-                          className="mt-8"
                       />
                   </div>
               </div>
@@ -105,7 +100,7 @@ export default function Home() {
                       <p className="text-gray-600 text-lg leading-[40px]">
                           Cerchi un servizio di trasporto dedicato professionale, sicuro e su misura? <b>Battista
                           Trasporti s.a.s</b> è il tuo partner ideale per spedizioni rapide, precise e personalizzate.
-                          Con oltre <b>20 anni di esperienza</b> nel settore e una <b>flotta moderna</b>, garantiamo
+                          Con oltre <b>30 anni di esperienza</b> nel settore e una <b>flotta moderna</b>, garantiamo
                           consegne efficienti nella zona di Milano e hinterland e su necessità supportiamo la consegna
                           in
                           tutta Italia.
@@ -117,7 +112,6 @@ export default function Home() {
                           height={0}
                           sizes="100vw"
                           className="w-full h-auto"
-                          priority
                       />
                       <p className="mt-8 text-gray-600 text-lg leading-[40px]">
                           Specializzati in <b>trasporti dedicati</b> per aziende di ogni settore, offriamo servizi
@@ -173,10 +167,9 @@ export default function Home() {
                               e volumi elevati, assicurando puntualità e affidabilità.
                           </li>
                           <li className="text-gray-600 mt-2">
-                              <i className="font-bold">Furgoni refrigerati</i>: perfetti per il trasporto a
-                              temperatura controllata di alimenti,
-                              farmaci e altri prodotti deperibili. Manteniamo la catena del freddo intatta durante
-                              ogni spostamento.
+                              <i className="font-bold">Furgoni dotati di termoregistratori:</i>: perfetti per il trasporto
+                              sicuro a temperatura controllata fino a -20°C di alimenti, farmaci e altri prodotti deperibili.
+                              Manteniamo la catena del freddo intatta durante ogni spostamento.
                           </li>
                           <li className="text-gray-600 mt-2">
                               <i className="font-bold">Assistenza tecnica al carico e scarico</i>: supporto
@@ -283,43 +276,7 @@ export default function Home() {
                   priority
               />
           </div>
-          <footer
-              className="p-4 bg-gradient-to-r from-red-500 to-orange-500">
-              <div className="text-white w-full flex justify-center text-center leading-[40px]">
-                  <div className="col-span-12">
-                      <p className="font-bold text-xs sm:text-base uppercase">
-                          Battista Trasporti s.a.s di Roberto Battista & C.
-                      </p>
-                      <p className="italic text-xs uppercase">
-                          Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO)
-                      </p>
-                      <a href="mailto:battistatrasporti1963@gmail.com"
-                         target="_blank"
-                         className="mt-4 text-xs sm:text-base underline">
-                          battistatrasporti1963@gmail.com
-                      </a>
-                      <a href="tel:+39335453733"
-                         target="_blank"
-                         className="text-xs sm:text-base flex items-center justify-center gap-2">
-                          <PhoneIcon className="w-6"/>
-                          +39 335453733
-                      </a>
-                  </div>
-              </div>
-          </footer>
-          <div className="w-full px-8 py-4 flex">
-              <div className="flex flex-1 gap-4">
-                  <Link href="/cookie-policy" className="underline">
-                      Cookie Policy
-                  </Link>
-                  <Link href="/privacy-policy" className="underline">
-                      Privacy Policy
-                  </Link>
-              </div>
-              <div>
-                  P.IVA 08229920965
-              </div>
-          </div>
+          <Footer/>
       </div>
   );
 }

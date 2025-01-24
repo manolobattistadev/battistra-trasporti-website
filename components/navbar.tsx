@@ -1,19 +1,21 @@
 import Image from "next/image";
+import {ReactNode} from "react";
+import Link from "next/link";
 
-export default function Navbar(){
+export default function Navbar({children}: {children: ReactNode}){
     return (
         <nav className="p-8 py-0 flex flex-col sm:flex-row items-center">
-            <Image
-                src="/logo.png"
-                alt="Battista Trasporti logo"
-                width={120}
-                height={38}
-                priority
-            />
+            <Link href="/">
+                <Image
+                    src="/logo.png"
+                    alt="Battista Trasporti logo"
+                    width={120}
+                    height={38}
+                    priority
+                />
+            </Link>
             <div className="sm:ml-12 mt-4 gap-16 flex">
-                <a href="#who-we-are" className="cursor-pointer text-nowrap">Chi siamo</a>
-                <a href="#services" className="cursor-pointer text-nowrap">Servizi</a>
-                <a href="#contact-us" className="cursor-pointer text-nowrap">Contattaci</a>
+             {children}
             </div>
         </nav>
     )

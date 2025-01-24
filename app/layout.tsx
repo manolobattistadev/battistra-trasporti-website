@@ -13,8 +13,7 @@ export const metadata: Metadata = {
   description: "Servizi di Trasporto Dedicato su Misura a Milano e Hinterland: Consegne Veloci, Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.",
 };
 
-// const domain = 'https://www.battistatrasporti.it'
-const domain = 'https://battistra-trasporti-website.vercel.app/'
+const domain = 'https://www.battistatrasporti.it'
 export default function RootLayout({
   children,
 }: Readonly<{

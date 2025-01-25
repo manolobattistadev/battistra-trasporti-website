@@ -16,6 +16,14 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.Toastify__progress-bar {
+  background: #ffffff;
+}
+
+.Toastify__progress-bar--wrp {
+  background: #f0731a;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,4 +1,5 @@
 'use client'
+import { Resend } from 'resend';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
@@ -10,13 +11,37 @@ import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
+import { toast } from 'react-toastify';
+import {SubmitHandler, useForm} from "react-hook-form";
+import {Spinner} from "@/components/ui/spinner";
+
+type Inputs = {
+    name: string
+    company: string
+    email: string
+    phone: string
+    notes: string
+}
+
 
 export default function Home() {
-    const [name, setName] = useState<string>("");
-    const [company, setCompany] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
-    const [phone, setPhone] = useState<string>("");
-    const [notes, setNotes] = useState<string>("");
+  const IS_DEV = process.env.NODE_ENV;
+  const [loading, setLoading] = useState<boolean>(false);
+  const resend = new Resend('re_1PEDH8Yr_Ee3qycNUeHW15k6w5hC99Zoc');
+    const {
+        register,
+        handleSubmit,
+        reset,
+        formState: { errors },
+    } = useForm<Inputs>({
+        defaultValues: {
+            name: IS_DEV ? 'Manolo Battista' : '',
+            email: IS_DEV ? 'manolo.battista@gmail.com' : '',
+            company: IS_DEV ? 'Arkemis S.r.l.' : '',
+            phone: IS_DEV ? '3925173932' : '',
+            notes: IS_DEV ? 'Test Website email' : '',
+        },
+    })
 
   const services = [
       {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità per settori specifici', url: '/servizi/trasporti-su-misura'},
@@ -32,18 +57,37 @@ export default function Home() {
       {icon: '💎', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose'},
   ]
 
-  function onMailRequest(){
-      const mailto = "battistatrasporti1963@gmail.com";
-      const subject = 'Richiesta preventivo'
-      let body = "Ciao Roberto,\r\r{notes}\r\rGrazie,\r{name}\r{phone}\r{email}\r{company}"
-      body = body.replace(`{notes}`, notes ?? '');
-      body = body.replace(`{name}`, name?? '');
-      body = body.replace(`{phone}`, phone?? '');
-      body = body.replace(`{email}`, email?? '');
-      body = body.replace(`{company}`, company ?? '');
-      window.location.href = `mailto:${mailto}?subject=${subject}&body=${encodeURIComponent(body)}`;
-  }
 
+    const onMailRequest: SubmitHandler<Inputs> = (data) => {
+        setLoading(true)
+        const mailto = "battistatrasporti1963@gmail.com";
+        const subject = 'Richiesta preventivo'
+        let body = "Ciao Roberto,\r\r{notes}\r\rGrazie,\r{name}\r{phone}\r{email}\r{company}"
+        body = body.replace(`{notes}`, data.notes ?? '');
+        body = body.replace(`{name}`, data.name?? '');
+        body = body.replace(`{phone}`, data.phone?? '');
+        body = body.replace(`{email}`, data.email?? '');
+        body = body.replace(`{company}`, data.company ?? '');
+
+        try {
+            const email = resend.emails.send({
+                from: 'Battista Trasporti <noreply@battistatrasporti.it>',
+                to: [mailto],
+                subject: subject,
+                html: encodeURIComponent(body)
+            })
+            console.log('Email sent successfully:', email);
+            reset()
+            toast("Abbiamo ricevuto la tua richiesta! Ti contatteremo al più presto.")
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        } catch (error: never) {
+            console.error('Failed to send email:', error?.response?.data || error.message);
+            toast(`Qualcosa è andato storto! Contattaci telefonicamente o all'indirizzo ${mailto}`)
+        } finally {
+            setLoading(false)
+        }
+    }
 
   return (
       <div className="min-h-screen gap-2">
@@ -235,71 +279,109 @@ export default function Home() {
               </div>
 
               {/* Contact us */}
-              <div id="contact-us" className="w-full mt-8 px-8 sm:px-16">
+              <form id="contact-us"  onSubmit={handleSubmit(onMailRequest)} className="w-full mt-8 px-8 sm:px-16">
                   <div className="w-full col-span-12">
-                      <p className="text-5xl font-bold mb-8">Richiedi preventivo</p>
-                      <p className="text-gray-600 text-lg leading-[40px] mb-8">
-                          Descrivi le tue necessità, ti contatteremo prima possibile
-                      </p>
-                      <div className="w-full sm:w-1/2 flex flex-col gap-4">
-                          <div className="w-full items-center gap-1.5">
-                              <Label htmlFor="name">Nome</Label>
-                              <Input
-                                  className="w-full"
-                                  type="name"
-                                  id="name"
-                                  placeholder="Inserisci il tuo nome"
-                                  onChange={(e) => setName(e.target.value)}
-                              />
-                          </div>
-                          <div className="w-full items-center gap-1.5">
-                              <Label htmlFor="name">Ragione sociale</Label>
-                              <Input
-                                  className="w-full"
-                                  type="name"
-                                  id="company"
-                                  onChange={(e) => setCompany(e.target.value)}
-                                  placeholder="Inserisci la ragione sociale"
-                              />
-                          </div>
-                          <div className="w-full items-center gap-1.5">
-                              <Label htmlFor="name">Email</Label>
-                              <Input
-                                  className="w-full"
-                                  type="email"
-                                  id="email"
-                                  onChange={(e) => setEmail(e.target.value)}
-                                  placeholder="Inserisci la tua email"
-                              />
-                          </div>
-                          <div className="w-full items-center gap-1.5">
-                              <Label htmlFor="name">Numero di telefono</Label>
-                              <Input
-                                  className="w-full"
-                                  type="tel"
-                                  id="phone"
-                                  onChange={(e) => setPhone(e.target.value)}
-                                  placeholder="Inserisci il tuo numero di telefono"
-                              />
-                          </div>
-                          <div className="w-full items-center gap-1.5">
-                              <Label htmlFor="name">Descrivi la tua necessità</Label>
-                              <Textarea
-                                  className="w-full"
-                                  id="notes"
-                                  onChange={(e) => setNotes(e.target.value)}
-                                  placeholder="Ho bisogno di trasportare..."
-                              />
-                          </div>
-                          <div className="mt-4 sm:flex gap-8 items-center">
-                              <Button variant="default" className="w-full sm:w-60"
-                                      onClick={() => onMailRequest()}>Invia richiesta</Button>
-                              <p className="mt-4 sm:mt-0">Hai un’esigenza particolare? Parliamone
-                                  telefonicamente</p>
+                          <p className="text-5xl font-bold mb-8">Richiedi preventivo</p>
+                          <p className="text-gray-600 text-lg leading-[40px] mb-8">
+                              Descrivi le tue necessità, ti contatteremo prima possibile
+                          </p>
+                          <div className="w-full sm:w-1/2 flex flex-col gap-4">
+                              <div className="w-full items-center gap-1.5">
+                                  <Label htmlFor="name">Nome</Label>
+                                  <Input
+                                      {...register("name", { required: "Il campo nome è obbligario" })}
+                                      className="w-full"
+                                      type="name"
+                                      id="name"
+                                      placeholder="Inserisci il tuo nome"
+                                  />
+                              </div>
+                              {errors.name && (
+                                  <p className="text-xs text-red-500">
+                                      {errors.name.message}
+                                  </p>
+                              )}
+                              <div className="w-full items-center gap-1.5">
+                                  <Label htmlFor="name">Ragione sociale</Label>
+                                  <Input
+                                      {...register("company")}
+                                      className="w-full"
+                                      type="name"
+                                      id="company"
+                                      placeholder="Inserisci la ragione sociale"
+                                  />
+                              </div>
+                              {errors.company && (
+                                  <p className="text-xs text-red-500">
+                                      {errors.company.message}
+                                  </p>
+                              )}
+                              <div className="w-full items-center gap-1.5">
+                                  <Label htmlFor="name">Email</Label>
+                                  <Input
+                                      {...register("email")}
+                                      {...register("email", {
+                                          required: "Il campo email è obbligario",
+                                          pattern: {
+                                              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                                              message: "L'email non è valida",
+                                          },
+                                      })}
+                                      className="w-full"
+                                      type="email"
+                                      id="email"
+                                      placeholder="Inserisci la tua email"
+                                  />
+                              </div>
+                              {errors.email && (
+                                  <p className="text-xs text-red-500">
+                                      {errors.email.message}
+                                  </p>
+                              )}
+                              <div className="w-full items-center gap-1.5">
+                                  <Label htmlFor="name">Numero di telefono</Label>
+                                  <Input
+                                      {...register("phone")}
+                                      className="w-full"
+                                      type="tel"
+                                      id="phone"
+                                      placeholder="Inserisci il tuo numero di telefono"
+                                  />
+                              </div>
+                              {errors.phone && (
+                                  <p className="text-xs text-red-500">
+                                      {errors.phone.message}
+                                  </p>
+                              )}
+                              <div className="w-full items-center gap-1.5">
+                                  <Label htmlFor="name">Descrivi la tua necessità</Label>
+                                  <Textarea
+                                      {...register("notes", { required: "Il campo è obbligario" })}
+                                      className="w-full"
+                                      id="notes"
+                                      placeholder="Ho bisogno di trasportare..."
+                                  />
+                              </div>
+                              {errors.notes && (
+                                  <p className="text-xs text-red-500">
+                                      {errors.notes.message}
+                                  </p>
+                              )}
+                              <div className="mt-4 sm:flex gap-8 items-center">
+                                  <Button
+                                      type="submit"
+                                      disabled={loading}
+                                      variant="default" className="w-full sm:w-60"
+                                  >
+                                      Invia richiesta
+                                      {loading && <Spinner size="sm" className="bg-white" />}
+                                  </Button>
+                                  <p className="mt-4 sm:mt-0">Hai un’esigenza particolare? Parliamone
+                                      telefonicamente</p>
+                              </div>
                           </div>
                       </div>
-                  </div>
-              </div>
+              </form>
           </main>
 
           <div className="flex justify-center mt-12 h-40">

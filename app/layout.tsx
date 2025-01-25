@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   description: "Servizi di Trasporto Dedicato su Misura a Milano e Hinterland: Consegne Veloci, Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.",
 };
 
-const domain = 'https://www.battistatrasporti.it'
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -30,19 +29,19 @@ export default function RootLayout({
         <meta property="og:description"
               content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
         <meta property="og:type" content="website"/>
-        <meta property="og:url" content={domain}/>
-        <meta property="og:image" content={`${domain}/logo.png`}/>
+        <meta property="og:url" content="https://battistatrasporti.it"/>
+        <meta property="og:image" content="https://battistatrasporti.it/logo.png"/>
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:title" content="Ritiri e Consegne in tutta Italia"/>
         <meta name="twitter:description"
               content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
-        <meta name="twitter:image" content={`${domain}/logo.png`}/>
+        <meta name="twitter:image" content="https://battistatrasporti.it/logo.png"/>
         <script type="application/ld+json">
             {JSON.stringify({
                 "@context": "https://schema.org",
                 "@type": "LocalBusiness",
                 "name": "Battista Trasporti",
-                "url": "https://www.battistatrasporti.it",
+                "url": "https://battistatrasporti.it",
                 "telephone": "+39 335453733",
                 "address": {
                     "@type": "PostalAddress",

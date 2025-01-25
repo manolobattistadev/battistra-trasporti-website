@@ -3,4 +3,4 @@ Disallow: /private/
 Disallow: /temp/
 Allow: /public/
 
-Sitemap: https://www.battistatrasporti.it/sitemap.xml
+Sitemap: https://battistatrasporti.it/sitemap.xml

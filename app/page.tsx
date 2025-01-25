@@ -9,6 +9,7 @@ import WhatsappIcon from "@/components/whatsapp-icon";
 import {useState} from "react";
 import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
+import Head from "next/head";
 
 export default function Home() {
     const [name, setName] = useState<string>("");
@@ -20,9 +21,9 @@ export default function Home() {
   const services = [
       {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità'},
       {icon: '👗', title: 'Moda', description: 'Da anni siamo specializzati nei servizi moda'},
-      {icon: '📷', title: 'Shooting fotografici', description: 'Trasportiamo attrezzatura fotografica con cura e precisione'},
+      {icon: '📷', title: 'Shooting fotografici', description: 'Trasporto sicuro di attrezzature fotografiche, props e capi appesi.'},
       {icon: '🔒', title: 'Sicurezza garantita', description: 'Monitoraggio costante e cura massima del tuo carico'},
-      {icon: '⏱️', title: 'Rapidità e puntualità', description: 'Ogni spedizione è progettata intorno alle tue necessità'},
+      {icon: '⏱️', title: 'Rapidità e puntualità', description: 'Garantiamo consegne rapide e puntuali, rispettando ogni scadenza con precisione e affidabilità'},
       {icon: '🌍', title: 'Copertura estesa', description: 'Operiamo a Milano e su tutto il territorio nazionale'},
       {icon: '🚪', title: 'Door-to-door', description: 'Ritiro e consegna direttamente presso le sedi richieste'},
       {icon: '📦', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose'},
@@ -44,6 +45,51 @@ export default function Home() {
 
   return (
       <div className="min-h-screen gap-2">
+
+      <Head>
+          <script type="application/ld+json">
+              {JSON.stringify({
+                  "@context": "https://schema.org",
+                  "@type": "LocalBusiness",
+                  "name": "Battista Trasporti",
+                  "url": "https://www.battistatrasporti.it",
+                  "telephone": "+39 335453733",
+                  "address": {
+                      "@type": "PostalAddress",
+                      "streetAddress": "Via Felice Cavallotti, 134",
+                      "addressLocality": "Casalpusterlengo",
+                      "addressRegion": "LO",
+                      "postalCode": "26841    ",
+                      "addressCountry": "IT"
+                  },
+                  "openingHours": "Mo-Fr 08:00-20:00",
+                  "geo": {
+                      "@type": "GeoCoordinates",
+                      "latitude": 45.183226,
+                      "longitude": 9.643068
+                  },
+                  "mainEntity": [
+                      {
+                          "@type": "Question",
+                          "name": "Quali servizi offre Battista Trasporti?",
+                          "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Offriamo trasporti dedicati per moda, shooting fotografici, traslochi e prodotti deperibili a temperatura controllata."
+                          }
+                      },
+                      {
+                          "@type": "Question",
+                          "name": "Dove operate?",
+                          "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Operiamo su Milano e hinterland."
+                          }
+                      }
+                  ]
+              })}
+          </script>
+      </Head>
+
         <ContactUsFloatingBtn/>
           <Navbar>
               <a href="#who-we-are" className="cursor-pointer text-nowrap">Chi siamo</a>

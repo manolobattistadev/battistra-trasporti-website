@@ -297,6 +297,7 @@ export default function Home() {
                                   <Label htmlFor="name">Nome</Label>
                                   <Input
                                       {...register("name", { required: "Il campo nome è obbligario" })}
+                                      disabled={loading}
                                       className="w-full"
                                       type="name"
                                       id="name"
@@ -312,6 +313,7 @@ export default function Home() {
                                   <Label htmlFor="name">Ragione sociale</Label>
                                   <Input
                                       {...register("company")}
+                                      disabled={loading}
                                       className="w-full"
                                       type="name"
                                       id="company"
@@ -326,7 +328,6 @@ export default function Home() {
                               <div className="w-full items-center gap-1.5">
                                   <Label htmlFor="name">Email</Label>
                                   <Input
-                                      {...register("email")}
                                       {...register("email", {
                                           required: "Il campo email è obbligario",
                                           pattern: {
@@ -334,6 +335,7 @@ export default function Home() {
                                               message: "L'email non è valida",
                                           },
                                       })}
+                                      disabled={loading}
                                       className="w-full"
                                       type="email"
                                       id="email"
@@ -349,6 +351,7 @@ export default function Home() {
                                   <Label htmlFor="name">Numero di telefono</Label>
                                   <Input
                                       {...register("phone")}
+                                      disabled={loading}
                                       className="w-full"
                                       type="tel"
                                       id="phone"
@@ -364,6 +367,7 @@ export default function Home() {
                                   <Label htmlFor="name">Descrivi la tua necessità</Label>
                                   <Textarea
                                       {...register("notes", { required: "Il campo è obbligario" })}
+                                      disabled={loading}
                                       className="w-full"
                                       id="notes"
                                       placeholder="Ho bisogno di trasportare..."

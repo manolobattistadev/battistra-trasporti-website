@@ -25,9 +25,9 @@ type Inputs = {
 
 
 export default function Home() {
-  const IS_DEV = process.env.NODE_ENV;
+  const IS_DEV = process.env.NODE_ENV === "development";
   const [loading, setLoading] = useState<boolean>(false);
-  const resend = new Resend('re_1PEDH8Yr_Ee3qycNUeHW15k6w5hC99Zoc');
+  const resend = new Resend('re_LDdxEhkr_QL1MCLQmpfYWy3uyZ6GoVydU');
     const {
         register,
         handleSubmit,

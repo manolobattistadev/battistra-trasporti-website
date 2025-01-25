@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {Roboto} from "next/font/google";
 import "./globals.css";
+import { GoogleTagManager } from '@next/third-parties/google'
 
 const robotoSans = Roboto({
     subsets: ['latin'],
@@ -78,11 +79,10 @@ export default function RootLayout({
             })}
         </script>
     </head>
-    <body
-        className={`${robotoSans.variable} ${robotoSans.variable} antialiased`}
-    >
+    <body className={`${robotoSans.variable} ${robotoSans.variable} antialiased`}>
     {children}
     </body>
+    <GoogleTagManager gtmId="GTM-MMGHRDK8" />
     </html>
   );
 }

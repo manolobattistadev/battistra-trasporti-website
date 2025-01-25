@@ -1,5 +1,4 @@
 'use client'
-import { Resend } from 'resend';
 import Image from "next/image";
 import {Button} from "@/components/ui/button";
 import {Input} from "@/components/ui/input";
@@ -27,7 +26,6 @@ type Inputs = {
 export default function Home() {
   const IS_DEV = process.env.NODE_ENV === "development";
   const [loading, setLoading] = useState<boolean>(false);
-  const resend = new Resend('re_LDdxEhkr_QL1MCLQmpfYWy3uyZ6GoVydU');
     const {
         register,
         handleSubmit,
@@ -58,32 +56,41 @@ export default function Home() {
   ]
 
 
-    const onMailRequest: SubmitHandler<Inputs> = (data) => {
+    const onMailRequest: SubmitHandler<Inputs> = async (data) => {
         setLoading(true)
-        const mailto = "battistatrasporti1963@gmail.com";
-        const subject = 'Richiesta preventivo'
-        let body = "Ciao Roberto,\r\r{notes}\r\rGrazie,\r{name}\r{phone}\r{email}\r{company}"
-        body = body.replace(`{notes}`, data.notes ?? '');
-        body = body.replace(`{name}`, data.name?? '');
-        body = body.replace(`{phone}`, data.phone?? '');
-        body = body.replace(`{email}`, data.email?? '');
-        body = body.replace(`{company}`, data.company ?? '');
+        const html = `
+          <p>Ciao Roberto,</p>
+          <p>${data.notes ?? ''}</p>
+          <p>Grazie,</p>
+          <p>
+            <strong>Nome:</strong> ${data.name ?? ''}<br>
+            <strong>Telefono:</strong> ${data.phone ?? ''}<br>
+            <strong>Email:</strong> <a href="mailto:${data.email ?? ''}">${data.email ?? ''}</a><br>
+            <strong>Azienda:</strong> ${data.company ?? ''}
+          </p>
+        `;
+
 
         try {
-            const email = resend.emails.send({
-                from: 'Battista Trasporti <noreply@battistatrasporti.it>',
-                to: [mailto],
-                subject: subject,
-                html: encodeURIComponent(body)
-            })
-            console.log('Email sent successfully:', email);
-            reset()
-            toast("Abbiamo ricevuto la tua richiesta! Ti contatteremo al più presto.")
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({html}),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                console.log('Email sent successfully:', result);
+                reset()
+                toast("Abbiamo ricevuto la tua richiesta! Ti contatteremo al più presto.")
+            } else {
+                toast(`Qualcosa è andato storto! Contattaci telefonicamente o all'indirizzo battistatrasporti1963@gmail.com'`)
+            }
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         } catch (error: never) {
-            console.error('Failed to send email:', error?.response?.data || error.message);
-            toast(`Qualcosa è andato storto! Contattaci telefonicamente o all'indirizzo ${mailto}`)
+            console.error('Error sending email:', error);
         } finally {
             setLoading(false)
         }

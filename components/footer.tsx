@@ -15,11 +15,13 @@ export default function Footer() {
                             Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO)
                         </p>
                         <a href="mailto:battistatrasporti1963@gmail.com"
+                           aria-label="Contattaci"
                            target="_blank"
                            className="mt-4 text-xs sm:text-base underline">
                             battistatrasporti1963@gmail.com
                         </a>
                         <a href="tel:+39335453733"
+                           aria-label="Contattaci"
                            target="_blank"
                            className="text-xs sm:text-base flex items-center justify-center gap-2">
                             <PhoneIcon className="w-6"/>

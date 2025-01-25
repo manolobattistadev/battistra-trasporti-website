@@ -194,13 +194,13 @@ export default function Home() {
                       </p>
                       <ul className="p-4 list-disc">
                           <li className="text-gray-600">
-                              <h5 className="italic font-bold">Trasporti con bilici e mezzi pesanti:</h5> ideali per
+                              <p className="italic font-bold">Trasporti con bilici e mezzi pesanti:</p> ideali per
                               gestire
                               carichi di grandi dimensioni
                               e volumi elevati, assicurando puntualità e affidabilità.
                           </li>
                           <li className="text-gray-600 mt-2">
-                              <h5 className="italic font-bold">Furgoni dotati di termoregistratori:</h5> perfetti
+                              <p className="italic font-bold">Furgoni dotati di termoregistratori:</p> perfetti
                               per il
                               trasporto
                               sicuro a temperatura controllata fino a -20°C di alimenti, farmaci e altri prodotti
@@ -208,12 +208,12 @@ export default function Home() {
                               Manteniamo la catena del freddo intatta durante ogni spostamento.
                           </li>
                           <li className="text-gray-600 mt-2">
-                              <h5 className="font-bold">Assistenza tecnica al carico e scarico:</h5> supporto
+                              <p className="font-bold">Assistenza tecnica al carico e scarico:</p> supporto
                               qualificato per garantire la massima
                               cura e sicurezza in ogni fase del trasporto, riducendo al minimo il rischio di danni.
                           </li>
                           <li className="text-gray-600 mt-2">
-                              <h5 className="font-bold">Trasporto merci delicate:</h5> soluzioni dedicate per beni
+                              <p className="font-bold">Trasporto merci delicate:</p> soluzioni dedicate per beni
                               fragili o di alto valore, con un
                               trattamento personalizzato per ogni esigenza.
                           </li>

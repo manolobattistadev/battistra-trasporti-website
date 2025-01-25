@@ -17,15 +17,16 @@ export default function PrivacyPolicyPage() {
           <main className="my-8 flex flex-col gap-8 row-start-2 items-center sm:items-start">
           <div id="privacy-policy" className="mt-4 sm:mt-0 px-8 sm:px-16 grid grid-cols-12">
               {/* Privacy */}
-              <div className="col-span-12">
-                  <h1>Privacy Policy</h1>
+              <div className="col-span-12 leading-[52px]">
+                  <h1 className="text-5xl font-bold mb-8">Privacy Policy</h1>
                   <p>Questa Privacy Policy descrive come raccogliamo, utilizziamo e proteggiamo i dati personali dei
-                      visitatori del nostro sito web <strong>[nome del tuo sito]</strong>.</p>
+                      visitatori del nostro sito web <strong>Battista Trasporti s.a.s.</strong>.</p>
 
                   <h2>1. Informazioni raccolte</h2>
                   <p>Raccogliamo i seguenti tipi di informazioni:</p>
                   <ul>
-                      <li><strong>Informazioni fornite dall&apos;utente:</strong> Nome, email, numero di telefono e altri
+                      <li><strong>Informazioni fornite dall&apos;utente:</strong> Nome, email, numero di telefono e
+                          altri
                           dati forniti volontariamente attraverso i moduli di contatto o registrazione.
                       </li>
                       <li><strong>Dati di navigazione:</strong> Informazioni raccolte automaticamente, come indirizzo
@@ -44,7 +45,9 @@ export default function PrivacyPolicyPage() {
                   <h2>3. Base giuridica del trattamento</h2>
                   <p>Il trattamento dei dati personali è basato su:</p>
                   <ul>
-                      <li>L&apos;esecuzione di un contratto o di misure precontrattuali richieste dall&apos;interessato.</li>
+                      <li>L&apos;esecuzione di un contratto o di misure precontrattuali richieste
+                          dall&apos;interessato.
+                      </li>
                       <li>Il consenso esplicito dell&apos;utente.</li>
                       <li>Il rispetto di obblighi legali.</li>
                   </ul>
@@ -71,7 +74,8 @@ export default function PrivacyPolicyPage() {
                   <p>Per qualsiasi domanda sulla presente Privacy Policy o per esercitare i tuoi diritti, puoi
                       contattarci a:</p>
                   <p>
-                      <strong>Email:</strong> <a href="mailto:battistatrasporti1963@gmail.com">battistatrasporti1963@gmail.com</a><br/>
+                      <strong>Email:</strong> <a
+                      href="mailto:battistatrasporti1963@gmail.com">battistatrasporti1963@gmail.com</a><br/>
                       <strong>Telefono:</strong> +39 335 353733<br/>
                       <strong>Indirizzo:</strong> Via Felice Cavallotti, 134 - 26841 - Casalpusterlengo (LO)
                   </p>

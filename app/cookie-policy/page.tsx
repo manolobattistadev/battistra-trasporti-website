@@ -17,7 +17,7 @@ export default function CookiePolicyPage() {
           <main className="my-8 flex flex-col gap-8 row-start-2 items-center sm:items-start">
           <div id="cookie-policy" className="mt-4 sm:mt-0 px-8 sm:px-16 grid grid-cols-12">
               {/* Cookie */}
-              <div className="col-span-12">
+              <div className="col-span-12 leading-[52px]">
                   <h1 className="text-5xl font-bold mb-8">Cookie Policy</h1>
                   <p>
                       Questa Cookie Policy descrive come utilizziamo i cookie e tecnologie simili sul nostro sito web.

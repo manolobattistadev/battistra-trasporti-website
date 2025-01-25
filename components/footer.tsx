@@ -9,7 +9,7 @@ export default function Footer() {
                 <div className="text-white w-full flex justify-center text-center leading-[40px]">
                     <div className="col-span-12">
                         <p className="font-bold text-xs sm:text-base uppercase">
-                            Battista Trasporti s.a.s di Roberto Battista & C.
+                            Battista Trasporti s.a.s. di Roberto Battista & C.
                         </p>
                         <p className="italic text-xs uppercase">
                             Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO)

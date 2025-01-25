@@ -10,7 +10,7 @@ export default function CookiePolicyPage() {
       <div className="min-h-screen gap-2">
         <ContactUsFloatingBtn/>
           <Navbar>
-              <Link href="/" className="cursor-pointer text-nowrap">Home</Link>
+              <Link href="/" className="cursor-pointer text-nowrap">Torna alla Home</Link>
           </Navbar>
           <WhatsappFloatingBtn/>
 

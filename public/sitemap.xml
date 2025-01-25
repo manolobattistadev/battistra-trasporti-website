@@ -7,4 +7,43 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
+    <!-- Cookie policy -->
+    <url>
+        <loc>https://www.battistatrasporti.it/cookie-policy</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Privacy policy -->
+    <url>
+        <loc>https://www.battistatrasporti.it/privacy-policy</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Services -->
+    <url>
+        <loc>https://www.battistatrasporti.it/servizi/moda</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.battistatrasporti.it/servizi/shooting-fotografici</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.battistatrasporti.it/servizi/trasporti-su-misura</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://www.battistatrasporti.it/servizi/trasporto-eventi</loc>
+        <lastmod>2025-01-23</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>

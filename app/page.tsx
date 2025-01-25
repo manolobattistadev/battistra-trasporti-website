@@ -5,12 +5,11 @@ import {Input} from "@/components/ui/input";
 import {Label} from "@/components/ui/label";
 import {Textarea} from "@/components/ui/textarea";
 import Navbar from "@/components/navbar";
-import WhatsappIcon from "@/components/whatsapp-icon";
 import {useState} from "react";
 import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
-import Head from "next/head";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
+import Link from "next/link";
 
 export default function Home() {
     const [name, setName] = useState<string>("");
@@ -20,16 +19,18 @@ export default function Home() {
     const [notes, setNotes] = useState<string>("");
 
   const services = [
-      {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità'},
-      {icon: '👗', title: 'Moda', description: 'Da anni siamo specializzati nei servizi moda'},
-      {icon: '📷', title: 'Shooting fotografici', description: 'Trasporto sicuro di attrezzature fotografiche, props e capi appesi.'},
-      {icon: '🔒', title: 'Sicurezza garantita', description: 'Monitoraggio costante e cura massima del tuo carico'},
+      {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità per settori specifici', url: '/servizi/trasporti-su-misura'},
+      {icon: '👗', title: 'Moda', description: 'Da anni siamo specializzati nei servizi moda per il trasporto di abiti appesi', url: '/servizi/moda'},
+      {icon: '📷', title: 'Shooting fotografici', description: 'Trasporto sicuro di attrezzature fotografiche, props e materiali di scena.', url: '/servizi/shooting-fotografici'},
+      {icon: '🤩', title: 'Trasporto persone', description: 'Trasporto per eventi, garantendo comfort, precisione e affidabilità per ogni spostamento.', url: '/servizi/trasporto-eventi'},
+  ];
+
+  const strongPoints = [
       {icon: '⏱️', title: 'Rapidità e puntualità', description: 'Garantiamo consegne rapide e puntuali, rispettando ogni scadenza con precisione e affidabilità'},
       {icon: '🌍', title: 'Copertura estesa', description: 'Operiamo a Milano e su tutto il territorio nazionale'},
-      {icon: '🚪', title: 'Door-to-door', description: 'Ritiro e consegna direttamente presso le sedi richieste'},
-      {icon: '📦', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose'},
-      // {icon: '🔄', title: 'Servizi di logistica', description: 'Supporto nella gestione completa della catena di distribuzione'},
-  ];
+      {icon: '🏢', title: 'Door-to-door', description: 'Ritiro e consegna direttamente presso le sedi richieste'},
+      {icon: '💎', title: 'Gestione carichi speciali', description: 'Attenzione e cura per merci delicate, ingombranti o preziose'},
+  ]
 
   function onMailRequest(){
       const mailto = "battistatrasporti1963@gmail.com";
@@ -46,51 +47,6 @@ export default function Home() {
 
   return (
       <div className="min-h-screen gap-2">
-
-      <Head>
-          <script type="application/ld+json">
-              {JSON.stringify({
-                  "@context": "https://schema.org",
-                  "@type": "LocalBusiness",
-                  "name": "Battista Trasporti",
-                  "url": "https://www.battistatrasporti.it",
-                  "telephone": "+39 335453733",
-                  "address": {
-                      "@type": "PostalAddress",
-                      "streetAddress": "Via Felice Cavallotti, 134",
-                      "addressLocality": "Casalpusterlengo",
-                      "addressRegion": "LO",
-                      "postalCode": "26841    ",
-                      "addressCountry": "IT"
-                  },
-                  "openingHours": "Mo-Fr 08:00-20:00",
-                  "geo": {
-                      "@type": "GeoCoordinates",
-                      "latitude": 45.183226,
-                      "longitude": 9.643068
-                  },
-                  "mainEntity": [
-                      {
-                          "@type": "Question",
-                          "name": "Quali servizi offre Battista Trasporti?",
-                          "acceptedAnswer": {
-                              "@type": "Answer",
-                              "text": "Offriamo trasporti dedicati per moda, shooting fotografici, traslochi e prodotti deperibili a temperatura controllata."
-                          }
-                      },
-                      {
-                          "@type": "Question",
-                          "name": "Dove operate?",
-                          "acceptedAnswer": {
-                              "@type": "Answer",
-                              "text": "Operiamo su Milano e hinterland."
-                          }
-                      }
-                  ]
-              })}
-          </script>
-      </Head>
-
         <ContactUsFloatingBtn/>
           <Navbar>
               <a href="#who-we-are"
@@ -165,11 +121,14 @@ export default function Home() {
                           Specializzati in <b>trasporti dedicati</b> per aziende di ogni settore, offriamo servizi
                           door-to-door,
                           gestione
-                          urgente delle spedizioni e <b>massima flessibilità</b> per soddisfare ogni tua esigenza logistica. La
+                          urgente delle spedizioni e <b>massima flessibilità</b> per soddisfare ogni tua esigenza
+                          logistica. La
                           nostra
                           missione è portare il tuo carico al successo!<br/>
-                          Affidati alla professionalità e all’<b>attenzione al dettaglio</b> di Roberto Battista e del suo
-                          team. Richiedi subito un preventivo personalizzato: la tua soddisfazione è il nostro obiettivo!
+                          Affidati alla professionalità e all’<b>attenzione al dettaglio</b> di Roberto Battista e del
+                          suo
+                          team. Richiedi subito un preventivo personalizzato: la tua soddisfazione è il nostro
+                          obiettivo!
                       </p>
                   </div>
               </div>
@@ -178,11 +137,12 @@ export default function Home() {
               <div id="services" className="p-12 w-full bg-gradient-to-r from-red-500 to-orange-500 grid grid-cols-12">
                   <div className="col-span-12">
                       <h3 className="text-white text-5xl font-bold mb-8">Servizi</h3>
-
                       <div className="flex flex-wrap gap-6 justify-center">
                           {services.map((service, index) => (
-                              <div key={`service-${index}`}
-                                   className="sm:w-[23%] bg-white rounded-2xl p-8 flex flex-col gap-4 items-center">
+                              <Link key={`service-${index}`} href={service.url}
+                                    className="sm:w-[23%] bg-white rounded-2xl p-8 flex flex-col gap-4 items-center
+                                    transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110 hover:bg-white
+                                    ">
                                   <p className="text-5xl">
                                       {service.icon}
                                   </p>
@@ -192,31 +152,59 @@ export default function Home() {
                                   <p className="text-gray-600 text-lg text-center">
                                       {service.description}
                                   </p>
-                              </div>
+                                  <Button variant="default" className="w-40">Scopri di più</Button>
+                              </Link>
                           ))}
                       </div>
                   </div>
               </div>
 
 
+              {/* Strong points */}
+              <div id="strong-points" className="mt-8 px-12 w-full">
+                  <h3 className="text-5xl font-bold mb-8">Punti di forza</h3>
+                  <div className="flex flex-wrap gap-6 justify-center">
+                      {strongPoints.map((service, index) => (
+                          <div key={`strong-points-${index}`}
+                               className="sm:w-[23%] bg-white rounded-2xl p-8 flex flex-col gap-4 items-center">
+                              <p className="text-5xl">
+                                  {service.icon}
+                              </p>
+                              <h4 className="text-gray-800 text-lg font-bold text-center">
+                                  {service.title}
+                              </h4>
+                              <p className="text-gray-600 text-lg text-center">
+                                  {service.description}
+                              </p>
+                          </div>
+                      ))}
+                  </div>
+              </div>
+
+
               {/* Special services */}
-              <div className="mt-8 px-8 sm:px-16 sm:grid sm:grid-cols-12 gap-8">
+              <div className="mt-8 px-8 sm:px-12 sm:grid sm:grid-cols-12 gap-8">
                   <div className="col-span-12 sm:col-span-7">
                       <h3 className="text-5xl font-bold mb-8">Servizi speciali</h3>
                       <p className="text-gray-600 text-lg leading-[40px]">
                           Offriamo una vasta gamma di servizi speciali, progettati per rispondere alle esigenze più
-                          specifiche dei nostri clienti. Grazie alla collaborazione con partner esperti e affidabili,
+                          specifiche dei nostri clienti. Grazie alla collaborazione con partner esperti e
+                          affidabili,
                           garantiamo soluzioni logistiche efficienti e sicure. I nostri servizi includono:
                       </p>
                       <ul className="p-4 list-disc">
                           <li className="text-gray-600">
-                              <h5 className="italic font-bold">Trasporti con bilici e mezzi pesanti:</h5> ideali per gestire
+                              <h5 className="italic font-bold">Trasporti con bilici e mezzi pesanti:</h5> ideali per
+                              gestire
                               carichi di grandi dimensioni
                               e volumi elevati, assicurando puntualità e affidabilità.
                           </li>
                           <li className="text-gray-600 mt-2">
-                              <h5 className="italic font-bold">Furgoni dotati di termoregistratori:</h5> perfetti per il trasporto
-                              sicuro a temperatura controllata fino a -20°C di alimenti, farmaci e altri prodotti deperibili.
+                              <h5 className="italic font-bold">Furgoni dotati di termoregistratori:</h5> perfetti
+                              per il
+                              trasporto
+                              sicuro a temperatura controllata fino a -20°C di alimenti, farmaci e altri prodotti
+                              deperibili.
                               Manteniamo la catena del freddo intatta durante ogni spostamento.
                           </li>
                           <li className="text-gray-600 mt-2">
@@ -305,8 +293,9 @@ export default function Home() {
                           </div>
                           <div className="mt-4 sm:flex gap-8 items-center">
                               <Button variant="default" className="w-full sm:w-60"
-                              onClick={() => onMailRequest()}>Invia richiesta</Button>
-                              <p className="mt-4 sm:mt-0">Hai un’esigenza particolare? Parliamone telefonicamente</p>
+                                      onClick={() => onMailRequest()}>Invia richiesta</Button>
+                              <p className="mt-4 sm:mt-0">Hai un’esigenza particolare? Parliamone
+                                  telefonicamente</p>
                           </div>
                       </div>
                   </div>

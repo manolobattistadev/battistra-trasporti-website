@@ -37,6 +37,47 @@ export default function RootLayout({
         <meta name="twitter:description"
               content="Servizi di Trasporto Dedicato su Misura: Consegne Veloci, Sicure e Puntuali per Milano e hinterland."/>
         <meta name="twitter:image" content={`${domain}/logo.png`}/>
+        <script type="application/ld+json">
+            {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "LocalBusiness",
+                "name": "Battista Trasporti",
+                "url": "https://www.battistatrasporti.it",
+                "telephone": "+39 335453733",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "Via Felice Cavallotti, 134",
+                    "addressLocality": "Casalpusterlengo",
+                    "addressRegion": "LO",
+                    "postalCode": "26841    ",
+                    "addressCountry": "IT"
+                },
+                "openingHours": "Mo-Fr 08:00-20:00",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 45.183226,
+                    "longitude": 9.643068
+                },
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Quali servizi offre Battista Trasporti?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Offriamo trasporti dedicati per moda, shooting fotografici, traslochi e prodotti deperibili a temperatura controllata."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Dove operate?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Operiamo su Milano e hinterland."
+                        }
+                    }
+                ]
+            })}
+        </script>
     </head>
     <body
         className={`${robotoSans.variable} ${robotoSans.variable} antialiased`}

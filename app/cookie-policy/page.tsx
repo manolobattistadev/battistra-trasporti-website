@@ -4,6 +4,7 @@ import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
+import {MAILTO} from "@/lib/env";
 
 export default function CookiePolicyPage() {
   return (
@@ -56,7 +57,7 @@ export default function CookiePolicyPage() {
                   <h2>Come contattarci</h2>
                   <p>
                       Per ulteriori informazioni sull&apos;uso dei cookie, puoi contattarci tramite email a <a
-                      href="mailto:battistatrasporti1963@gmail.com">battistatrasporti1963@gmail.com</a>.
+                      href={`mailto:${MAILTO}`}>{MAILTO}</a>.
                   </p>
               </div>
           </div>

@@ -5,6 +5,7 @@ import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
 import Image from "next/image";
 import type {Metadata} from "next";
+import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
     title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per la Moda e Fashion Week",
@@ -31,7 +32,9 @@ export default function FashionPage() {
                           Nel dinamico mondo della moda, ogni dettaglio conta, e il tempismo è tutto. Durante i periodi
                           delle
                           sfilate e gli eventi più importanti, è fondamentale che abiti, accessori e materiali arrivino a
-                          destinazione in condizioni perfette e con la massima puntualità. Battista Trasporti offre servizi
+                          destinazione in condizioni perfette e con la massima puntualità.
+                          <Link href="/" className="text-orange-500 underline mx-1">Battista Trasporti</Link>
+                          offre servizi
                           di trasporto dedicati al settore moda, progettati per rispondere alle esigenze di un’industria che
                           non si ferma mai.
                       </h2>
@@ -146,6 +149,8 @@ export default function FashionPage() {
 
               </div>
           </div>
+
+          <ContactForm />
           </main>
           <Footer/>
       </div>

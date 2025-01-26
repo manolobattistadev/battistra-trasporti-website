@@ -4,6 +4,7 @@ import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
+import {MAILTO} from "@/lib/env";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -75,7 +76,7 @@ export default function PrivacyPolicyPage() {
                       contattarci a:</p>
                   <p>
                       <strong>Email:</strong> <a
-                      href="mailto:battistatrasporti1963@gmail.com">battistatrasporti1963@gmail.com</a><br/>
+                      href={`mailto:${MAILTO}`}>{MAILTO}</a><br/>
                       <strong>Telefono:</strong> +39 335 353733<br/>
                       <strong>Indirizzo:</strong> Via Felice Cavallotti, 134 - 26841 - Casalpusterlengo (LO)
                   </p>

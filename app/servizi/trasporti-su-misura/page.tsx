@@ -5,6 +5,7 @@ import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
 import Image from "next/image";
 import type {Metadata} from "next";
+import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
     title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per materiali fragili",
@@ -118,6 +119,7 @@ export default function DedicatedTransportPage() {
                   </p>
               </div>
           </div>
+          <ContactForm />
           </main>
           <Footer/>
       </div>

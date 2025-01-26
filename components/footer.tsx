@@ -1,5 +1,6 @@
 import {PhoneIcon} from "@heroicons/react/16/solid";
 import Link from "next/link";
+import {MAILTO} from "@/lib/env";
 
 export default function Footer() {
     return(
@@ -14,11 +15,11 @@ export default function Footer() {
                         <p className="italic text-xs uppercase">
                             Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO)
                         </p>
-                        <a href="mailto:battistatrasporti1963@gmail.com"
+                        <a href={`mailto:${MAILTO}`}
                            aria-label="Contattaci"
                            target="_blank"
                            className="mt-4 text-xs sm:text-base underline">
-                            battistatrasporti1963@gmail.com
+                            {MAILTO}
                         </a>
                         <a href="tel:+39335453733"
                            aria-label="Contattaci"

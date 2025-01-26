@@ -1,4 +1,5 @@
 import { Resend } from 'resend';
+import {MAILTO} from "@/lib/env";
 
 const resend = new Resend('re_LDdxEhkr_QL1MCLQmpfYWy3uyZ6GoVydU');
 
@@ -19,7 +20,7 @@ export default async function handler(req, res) {
         // Send email using Resend
         const emailResponse = await resend.emails.send({
             from: 'noreplay@battistatrasporti.it',
-            to: 'battistatrasporti1963@gmail.com',
+            to: MAILTO,
             subject: 'Richiesta sito',
             html,
         });

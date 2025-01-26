@@ -81,9 +81,8 @@ export default function CustomerCarousel(){
             <div className={cn("swiper swiper-transition", "w-full h-[140px] sm:h-[200px]")}>
                 <div className="swiper-wrapper">
                     {groupedCustomers.map((group, index) => (
-                        <>
-                            <div key={`group-customers-${index}`}
-                                 className={cn("swiper-slide", "!flex items-center justify-between gap-8")}
+                        <React.Fragment key={`group-customers-${index}`}>
+                            <div className={cn("swiper-slide", "!flex items-center justify-between gap-8")}
                                  data-swiper-autoplay={SWIPER_DELAY}>
                                 {group.map((customer, i) => (
                                     <div key={'customer-' + i}>
@@ -98,7 +97,7 @@ export default function CustomerCarousel(){
                                     </div>
                                 ))}
                             </div>
-                        </>
+                        </React.Fragment>
                     ))}
                 </div>
 

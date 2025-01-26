@@ -112,7 +112,7 @@ export default function Home() {
               </div>
 
               {/* Services */}
-              <div id="services" className="p-12 w-full bg-gradient-to-r from-red-500 to-orange-500 grid grid-cols-12">
+              <div id="services" className="p-12 px-8 sm:px-16 w-full bg-gradient-to-r from-red-500 to-orange-500 grid grid-cols-12">
                   <div className="col-span-12">
                       <h3 className="text-white text-5xl font-bold mb-8">Servizi</h3>
                       <div className="flex flex-wrap gap-6 justify-center">
@@ -139,7 +139,7 @@ export default function Home() {
 
 
               {/* Strong points */}
-              <div id="strong-points" className="mt-8 px-12 w-full">
+              <div id="strong-points" className="mt-8 px-8 sm:px-16 w-full">
                   <h3 className="text-5xl font-bold mb-8">Punti di forza</h3>
                   <div className="flex flex-wrap gap-6 justify-center">
                       {strongPoints.map((service, index) => (

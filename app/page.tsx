@@ -50,9 +50,9 @@ export default function Home() {
                       <h1 className="text-4xl md:text-7xl font-bold leading-[50px] md:leading-[100px]">
                           Ritiri e consegne<br/> per Milano e hinterland
                       </h1>
-                      <h2 className="text-gray-600 text-lg leading-[40px] sm:w-2/3">
-                          Servizi di Trasporto Dedicato su misura in tutta italia: Consegne Veloci,
-                          Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.
+                      <h2 className="text-gray-600 text-lg leading-[40px] sm:w-10/12">
+                          Servizi di Trasporto su misura in tutta italia: Consegne Veloci,
+                          Sicure e Puntuali per abiti appesi, materiali di scena e attrezzature fotografiche.
                       </h2>
 
                       <div className="flex gap-4">
@@ -83,7 +83,7 @@ export default function Home() {
                   <div className="col-span-12">
                       <h3 className="text-5xl font-bold mb-8">Chi siamo</h3>
                       <p className="text-gray-600 text-lg leading-[40px]">
-                          Cerchi un servizio di trasporto dedicato professionale, sicuro e su misura? <b>Battista
+                          Cerchi un servizio di ritiro e consegna dedicato professionale, sicuro e su misura? <b>Battista
                           Trasporti s.a.s.</b> è il tuo partner ideale per spedizioni rapide, precise e personalizzate.
                           Con oltre <b>30 anni di esperienza</b> nel settore e una <b>flotta moderna</b>, garantiamo
                           consegne efficienti nella zona di Milano e hinterland e su necessità supportiamo la consegna
@@ -100,15 +100,10 @@ export default function Home() {
                       />
                       <p className="mt-8 text-gray-600 text-lg leading-[40px]">
                           Specializzati in <b>trasporti dedicati</b> per aziende di ogni settore, offriamo servizi
-                          door-to-door,
-                          gestione
-                          urgente delle spedizioni e <b>massima flessibilità</b> per soddisfare ogni tua esigenza
-                          logistica. La
-                          nostra
-                          missione è portare il tuo carico al successo!<br/>
+                          door-to-door, gestione urgente delle spedizioni e <b>massima flessibilità</b> per soddisfare ogni tua esigenza
+                          logistica. La nostra missione è portare il tuo carico al successo!<br/>
                           Affidati alla professionalità e all’<b>attenzione al dettaglio</b> di Roberto Battista e del
-                          suo
-                          team. Richiedi subito un preventivo personalizzato: la tua soddisfazione è il nostro
+                          suo team. Richiedi subito un preventivo personalizzato: la tua soddisfazione è il nostro
                           obiettivo!
                       </p>
                   </div>
@@ -185,17 +180,12 @@ export default function Home() {
                       <ul className="p-4 list-disc">
                           <li className="text-gray-600">
                               <p className="italic font-bold">Trasporti con bilici e mezzi pesanti:</p> ideali per
-                              gestire
-                              carichi di grandi dimensioni
-                              e volumi elevati, assicurando puntualità e affidabilità.
+                              gestire carichi di grandi dimensioni e volumi elevati, assicurando puntualità e affidabilità.
                           </li>
                           <li className="text-gray-600 mt-2">
                               <p className="italic font-bold">Furgoni dotati di termoregistratori:</p> perfetti
-                              per il
-                              trasporto
-                              sicuro a temperatura controllata fino a -20°C di alimenti, farmaci e altri prodotti
-                              deperibili.
-                              Manteniamo la catena del freddo intatta durante ogni spostamento.
+                              per il trasporto sicuro a temperatura controllata fino a -20°C di alimenti, farmaci e altri prodotti
+                              deperibili. Manteniamo la catena del freddo intatta durante ogni spostamento.
                           </li>
                           <li className="text-gray-600 mt-2">
                               <p className="font-bold">Assistenza tecnica al carico e scarico:</p> supporto

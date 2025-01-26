@@ -8,7 +8,7 @@ import type {Metadata} from "next";
 import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
-    title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per eventi",
+    title: "Battista Trasporti - Servizi per eventi a Milano",
     description: "Trasporto ecosostenibile a Milano: comfort, eleganza e sostenibilità per spostamenti privati, eventi e trasferimenti aziendali.",
 };
 

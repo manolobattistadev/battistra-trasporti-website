@@ -8,7 +8,7 @@ import type {Metadata} from "next";
 import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
-    title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per materiali fragili",
+    title: "Battista Trasporti - Servizi per materiali fragili a Milano",
     description: "Trasporto sicuro a Milano per gioielli preziosi, oggetti fragili, farmaci e alimenti deperibili con massima cura e puntualità.",
 };
 

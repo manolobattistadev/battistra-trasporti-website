@@ -8,7 +8,7 @@ import type {Metadata} from "next";
 import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
-    title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per la Moda e Fashion Week",
+    title: "Battista Trasporti - Servizi Moda e Fashion Week a Milano",
     description: "Trasporto specializzato a Milano per abiti appesi, sfilate, shooting fotografici e materiali scenici. Puntualità e cura per il settore moda.",
 };
 

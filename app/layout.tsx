@@ -11,8 +11,8 @@ const robotoSans = Roboto({
     variable: '--font-roboto',
 });
 
-const title = "Battista Trasporti s.a.s. - Servizi di Trasporto per Moda, Shooting Fotografici e Fashion Week a Milano";
-const description = "Scopri i nostri servizi di trasporto personalizzati a Milano e hinterland: rapidi, sicuri e ideali per moda, traslochi, eventi e shooting fotografici. Precisione e affidabilità garantite.";
+const title = "Battista Trasporti - Servizi di Trasporto per Moda ed Eventi";
+const description = "Scopri i servizi di Battista Trasporti: trasporti rapidi e sicuri a Milano per moda, eventi, shooting e materiali scenici. Contattaci ora!";
 export const metadata: Metadata = {
   title,
   description,

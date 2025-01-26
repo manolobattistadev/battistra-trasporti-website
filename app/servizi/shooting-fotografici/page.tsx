@@ -8,7 +8,7 @@ import type {Metadata} from "next";
 import ContactForm from "@/components/contact-form";
 
 export const metadata: Metadata = {
-    title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per shooting fotografici",
+    title: "Battista Trasporti - Servizi per shooting fotografici a Milano",
     description: "Trasporto a Milano per attrezzature fotografiche, materiali di scena e set completi, con massima cura e puntualità per shooting ed eventi.",
 };
 

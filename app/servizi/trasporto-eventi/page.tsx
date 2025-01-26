@@ -1,10 +1,16 @@
-'use client'
 import Navbar from "@/components/navbar";
 import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
 import Image from "next/image";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per eventi",
+    description: "Trasporto ecosostenibile a Milano: comfort, eleganza e sostenibilità per spostamenti privati, eventi e trasferimenti aziendali.",
+};
+
 
 export default function EventTransportPage() {
   return (

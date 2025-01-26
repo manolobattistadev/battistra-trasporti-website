@@ -1,10 +1,15 @@
-'use client'
 import Navbar from "@/components/navbar";
 import ContactUsFloatingBtn from "@/components/contact-us-floating-btn";
 import Footer from "@/components/footer";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
 import Image from "next/image";
+import type {Metadata} from "next";
+
+export const metadata: Metadata = {
+    title: "Battista Trasporti s.a.s. - Servizi di Trasporto a Milano per materiali fragili",
+    description: "Trasporto sicuro a Milano per gioielli preziosi, oggetti fragili, farmaci e alimenti deperibili con massima cura e puntualità.",
+};
 
 export default function DedicatedTransportPage() {
   return (
@@ -39,9 +44,7 @@ export default function DedicatedTransportPage() {
                               progettato per rispondere alle esigenze specifiche di ogni cliente. Questo approccio è
                               particolarmente utile per chi ha necessità particolari, come:
                               <ul className="p-4 list-disc">
-                                  <li>Trasporti speciali:
-                                      movimentazione di carichi pesanti, voluminosi o fragili.
-                                  </li>
+                                  <li>Trasporti speciali: movimentazione di carichi pesanti, voluminosi o fragili.</li>
                                   <li>Trasporti a temperatura controllata: gestione della catena del freddo per alimenti,
                                       farmaci e altri prodotti deperibili.
                                   </li>

@@ -11,8 +11,8 @@ const robotoSans = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "Battista Trasporti s.a.s. - Servizi di Trasporto Dedicato su Misura",
-  description: "Servizi di Trasporto Dedicato su Misura a Milano e Hinterland: Consegne Veloci, Sicure e Puntuali per Moda, Traslochi e Shooting Fotografici.",
+  title: "Battista Trasporti s.a.s. - Servizi di Trasporto per Moda, Shooting Fotografici e Fashion Week a Milano",
+  description: "Scopri i nostri servizi di trasporto personalizzati a Milano e hinterland: rapidi, sicuri e ideali per moda, traslochi, eventi e shooting fotografici. Precisione e affidabilità garantite.",
 };
 
 export default function RootLayout({

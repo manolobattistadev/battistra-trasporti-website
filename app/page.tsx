@@ -6,6 +6,7 @@ import Footer from "@/components/footer";
 import WhatsappFloatingBtn from "@/components/whatsapp-floating-btn";
 import Link from "next/link";
 import ContactForm from "@/components/contact-form";
+import CustomerCarousel from "@/components/customer-carousel";
 
 export default function Home() {
   const services = [
@@ -24,7 +25,7 @@ export default function Home() {
 
   return (
       <div className="min-h-screen gap-2">
-        <ContactUsFloatingBtn/>
+          <ContactUsFloatingBtn/>
           <Navbar>
               <a href="#who-we-are"
                  aria-label="Chi siamo"
@@ -109,6 +110,15 @@ export default function Home() {
                       </p>
                   </div>
               </div>
+
+              {/* Our customers */}
+              <div id="customers" className="mt-8 px-8 sm:px-16 w-full">
+                  <h3 className="text-5xl font-bold mb-8">Alcuni dei nostri clienti</h3>
+                  <div className="flex flex-wrap gap-6 justify-center">
+                      <CustomerCarousel />
+                  </div>
+              </div>
+
 
               {/* Services */}
               <div id="services" className="p-12 px-8 sm:px-16 w-full bg-gradient-to-r from-red-500 to-orange-500 grid grid-cols-12">

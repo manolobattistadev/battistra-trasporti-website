@@ -24,6 +24,14 @@ body {
   background: #f0731a;
 }
 
+.swiper-pagination {
+  margin-top: 20px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #f0731a!important;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

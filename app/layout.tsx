@@ -5,7 +5,6 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import { ToastContainer, Bounce } from "react-toastify";
 import {MAILTO} from "@/lib/env";
 
-
 const robotoSans = Roboto({
     subsets: ['latin'],
     weight:["400"],

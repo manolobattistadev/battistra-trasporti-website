@@ -27,6 +27,8 @@ export default function RootLayout({
   return (
     <html lang="it">
     <head>
+        <link href="https://www.googletagmanager.com/gtag/js?id=GTM-MMGHRDK8" rel="preload" as="script"/>
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com/"/>
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
@@ -132,36 +134,36 @@ export default function RootLayout({
                 "@context": "https://schema.org",
                 "@type": "BreadcrumbList",
                 "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://www.battistatrasporti.it"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Moda & Fashion",
-                    "item": "https://www.battistatrasporti.it/servizi/moda"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 3,
-                    "name": "Shooting fotografici",
-                    "item": "https://www.battistatrasporti.it/servizi/shooting-fotografici"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 4,
-                    "name": "Trasporti su misura",
-                    "item": "https://www.battistatrasporti.it/servizi/trasporti-su-misura"
-                },
-                {
-                    "@type": "ListItem",
-                    "position": 5,
-                    "name": "Trasporto eventi",
-                    "item": "https://www.battistatrasporti.it/servizi/trasporto-eventi"
-                }
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.battistatrasporti.it"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Moda & Fashion",
+                        "item": "https://www.battistatrasporti.it/servizi/moda"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Shooting fotografici",
+                        "item": "https://www.battistatrasporti.it/servizi/shooting-fotografici"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 4,
+                        "name": "Trasporti su misura",
+                        "item": "https://www.battistatrasporti.it/servizi/trasporti-su-misura"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 5,
+                        "name": "Trasporto eventi",
+                        "item": "https://www.battistatrasporti.it/servizi/trasporto-eventi"
+                    }
                 ]
             })}
         </script>
@@ -182,7 +184,7 @@ export default function RootLayout({
         transition={Bounce}
     />
     </body>
-    <GoogleTagManager gtmId="GTM-MMGHRDK8"/>
+    <GoogleTagManager gtmId="GTM-MMGHRDK8" />
     </html>
   );
 }

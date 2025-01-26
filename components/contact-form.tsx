@@ -44,7 +44,7 @@ export default function ContactForm(){
           <p>
             <strong>Nome:</strong> ${data.name ?? ''}<br>
             <strong>Telefono:</strong> ${data.phone ?? ''}<br>
-            <strong>Email:</strong> <a href="mailto:${data.email ?? ''}">${data.email ?? ''}</a><br>
+            <strong>Email:</strong> <a title="email" aria-label="email" href="mailto:${data.email ?? ''}">${data.email ?? ''}</a><br>
             <strong>Azienda:</strong> ${data.company ?? ''}
           </p>
         `;

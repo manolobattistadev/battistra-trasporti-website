@@ -28,12 +28,15 @@ export default function Home() {
           <ContactUsFloatingBtn/>
           <Navbar>
               <a href="#who-we-are"
+                 title="Chi siamo"
                  aria-label="Chi siamo"
                  className="cursor-pointer text-nowrap">Chi siamo</a>
               <a href="#services"
+                 title="Servizi"
                  aria-label="Servizi"
                  className="cursor-pointer text-nowrap">Servizi</a>
               <a href="#contact-us"
+                 title="Contattaci"
                  aria-label="Contattaci"
                  className="cursor-pointer text-nowrap">Contattaci</a>
           </Navbar>
@@ -56,7 +59,7 @@ export default function Home() {
                           <a href="#contact-us" aria-label="Contattaci">
                               <Button variant="default" className="w-40">Contattaci adesso</Button>
                           </a>
-                          <a href="#services" aria-label="Scopri di più">
+                          <a href="#services" title="Scopri di più" aria-label="Scopri di più">
                               <Button variant="ghost" className="w-40">Scopri di più</Button>
                           </a>
                       </div>

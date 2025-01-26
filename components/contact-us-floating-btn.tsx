@@ -3,6 +3,7 @@ import {PhoneIcon} from "@heroicons/react/16/solid";
 export default function ContactUsFloatingBtn() {
     return (
         <a href="tel:+39335453733"
+           title="Contattaci"
            aria-label="Contattaci"
            className="cursor-pointer flex gap-4">
             <div

@@ -100,32 +100,6 @@ export default function RootLayout({
                         "availability": "http://schema.org/InStock",
                         "url": "https://www.battistatrasporti.it/eventi"
                     }
-                ],
-                "faq": [
-                    {
-                        "@type": "Question",
-                        "name": "Quali sono le aree servite da Battista Trasporti?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Operiamo principalmente a Milano, nell'hinterland e in tutta la Lombardia, offrendo trasporti su misura."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Come viene garantita la sicurezza degli abiti durante il trasporto?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Gli abiti appesi vengono trasportati con cura in veicoli dotati di supporti dedicati per garantire massima sicurezza e protezione."
-                        }
-                    },
-                    {
-                        "@type": "Question",
-                        "name": "Battista Trasporti offre servizi per la Fashion Week?",
-                        "acceptedAnswer": {
-                            "@type": "Answer",
-                            "text": "Sì, offriamo trasporti personalizzati per sfilate e shooting durante la Fashion Week a Milano."
-                        }
-                    }
                 ]
             })}
         </script>
@@ -163,6 +137,36 @@ export default function RootLayout({
                         "position": 5,
                         "name": "Trasporto eventi",
                         "item": "https://www.battistatrasporti.it/servizi/trasporto-eventi"
+                    }
+                ]
+            })}
+            {JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Quali servizi di trasporto offre Battista Trasporti?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Battista Trasporti offre trasporti su misura per moda, shooting fotografici, eventi e materiali scenici."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Battista Trasporti opera solo a Milano?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Sebbene la sede principale sia a Milano, Battista Trasporti offre servizi anche nell'hinterland e altre località su richiesta."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Come posso contattare Battista Trasporti?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Puoi contattare Battista Trasporti tramite il nostro sito ufficiale o chiamando il numero +39 123 456 7890."
+                        }
                     }
                 ]
             })}

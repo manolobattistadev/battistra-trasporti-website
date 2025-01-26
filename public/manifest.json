@@ -1,6 +1,7 @@
 {
   "name": "Battista Trasporti",
   "short_name": "Trasporti",
+  "description": "Scopri i servizi di Battista Trasporti: trasporti rapidi e sicuri a Milano per moda, eventi, shooting e materiali scenici. Contattaci ora!",
   "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#ffffff",

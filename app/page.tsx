@@ -48,10 +48,10 @@ export default function Home() {
                   <div className="col-span-12 sm:col-span-7 flex flex-col gap-4">
                       <h3 className="mt-8 sm:mt-0 text-gray-600 uppercase ml-1">Battista Trasporti s.a.s.</h3>
                       <h1 className="text-4xl md:text-7xl font-bold leading-[50px] md:leading-[100px]">
-                          Ritiri e consegne<br/> per Milano e hinterland
+                          Servizi di Trasporto<br/> per Milano e hinterland
                       </h1>
                       <h2 className="text-gray-600 text-lg leading-[40px] sm:w-10/12">
-                          Servizi di Trasporto su misura in tutta italia: Consegne Veloci,
+                          Ritiri e consegne su misura in tutta italia: Consegne Veloci,
                           Sicure e Puntuali per abiti appesi, materiali di scena e attrezzature fotografiche.
                       </h2>
 

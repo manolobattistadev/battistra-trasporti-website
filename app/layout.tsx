@@ -3,7 +3,6 @@ import {Roboto} from "next/font/google";
 import "./globals.css";
 import { GoogleTagManager } from '@next/third-parties/google'
 import { ToastContainer, Bounce } from "react-toastify";
-import {MAILTO} from "@/lib/env";
 import StructuredData from "@/components/structured-data";
 
 const robotoSans = Roboto({

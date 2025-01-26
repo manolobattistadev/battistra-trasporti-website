@@ -10,7 +10,7 @@ import ContactForm from "@/components/contact-form";
 export default function Home() {
   const services = [
       {icon: '🚚', title: 'Trasporti su misura', description: 'Ogni spedizione è progettata intorno alle tue necessità per settori specifici', url: '/servizi/trasporti-su-misura'},
-      {icon: '👗', title: 'Moda', description: 'Da anni siamo specializzati nei servizi moda per il trasporto di abiti appesi', url: '/servizi/moda'},
+      {icon: '👗', title: 'Moda & Pubblicità', description: 'Da anni siamo specializzati nei servizi moda per il trasporto di abiti appesi', url: '/servizi/moda'},
       {icon: '📷', title: 'Shooting fotografici', description: 'Trasporto sicuro di attrezzature fotografiche, props e materiali di scena.', url: '/servizi/shooting-fotografici'},
       {icon: '🤩', title: 'Trasporto persone', description: 'Trasporto per eventi, garantendo comfort, precisione e affidabilità per ogni spostamento.', url: '/servizi/trasporto-eventi'},
   ];

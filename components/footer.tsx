@@ -1,5 +1,4 @@
 import {PhoneIcon} from "@heroicons/react/16/solid";
-import Link from "next/link";
 import {MAILTO} from "@/lib/env";
 
 export default function Footer() {
@@ -13,7 +12,7 @@ export default function Footer() {
                             Battista Trasporti s.a.s. di Roberto Battista & C.
                         </p>
                         <p className="italic text-xs uppercase">
-                            Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO)
+                            Via F. Cavallotti 134 - 26841 - Casalpusterlengo (LO) - P.IVA 08229920965
                         </p>
                         <a href={`mailto:${MAILTO}`}
                            title="Contattaci"
@@ -33,19 +32,6 @@ export default function Footer() {
                     </div>
                 </div>
             </footer>
-            <div className="w-full px-8 py-4 flex">
-                <div className="flex flex-1 gap-4">
-                    <Link href="/cookie-policy" className="underline">
-                        Cookie Policy
-                    </Link>
-                    <Link href="/privacy-policy" className="underline">
-                        Privacy Policy
-                    </Link>
-                </div>
-                <div>
-                    P.IVA 08229920965
-                </div>
-            </div>
         </>
     )
 }

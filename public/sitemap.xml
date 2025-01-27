@@ -7,20 +7,6 @@
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
-    <!-- Cookie policy -->
-    <url>
-        <loc>https://battistatrasporti.it/cookie-policy</loc>
-        <lastmod>2025-01-23</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
-    <!-- Privacy policy -->
-    <url>
-        <loc>https://battistatrasporti.it/privacy-policy</loc>
-        <lastmod>2025-01-23</lastmod>
-        <changefreq>daily</changefreq>
-        <priority>1.0</priority>
-    </url>
     <!-- Services -->
     <url>
         <loc>https://battistatrasporti.it/servizi/moda</loc>

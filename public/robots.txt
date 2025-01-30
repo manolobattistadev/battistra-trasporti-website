@@ -1,6 +1,7 @@
 User-agent: *
 Disallow: /private/
 Disallow: /temp/
+Disallow: /_next/
 Allow: /public/
 
 Sitemap: https://battistatrasporti.it/sitemap.xml

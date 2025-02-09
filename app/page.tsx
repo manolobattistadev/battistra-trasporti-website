@@ -64,7 +64,7 @@ export default function Home() {
                           </a>
                       </div>
                   </div>
-                  <div className="hidden sm:flex sm:col-span-5 justify-center">
+                  <div className="mt-8 flex col-span-12 sm:mt-0 sm:flex sm:col-span-5 justify-center">
                       <Image
                           src="/battista_home.png"
                           alt="Battista Trasporti"

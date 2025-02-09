@@ -81,7 +81,7 @@ export default function Home() {
               <div id="who-we-are" className="mt-4 sm:mt-0 px-8 sm:px-16 grid grid-cols-12">
                   {/* Who we are */}
                   <div className="col-span-12">
-                      <h3 className="text-5xl font-bold mb-8">Chi siamo</h3>
+                      <h3 className="text-5xl font-bold sm:mt-4 mb-8">Chi siamo</h3>
                       <p className="text-gray-600 text-lg leading-[40px]">
                           Cerchi un servizio di ritiro e consegna dedicato professionale, sicuro e su misura? <b>Battista
                           Trasporti s.a.s.</b> è il tuo partner ideale per spedizioni rapide, precise e personalizzate.
@@ -96,7 +96,7 @@ export default function Home() {
                           width={0}
                           height={0}
                           sizes="100vw"
-                          className="w-full h-auto"
+                          className="w-full sm:w-[70%] m-auto h-auto"
                       />
                       <p className="mt-8 text-gray-600 text-lg leading-[40px]">
                           Specializzati in <b>trasporti dedicati</b> per aziende di ogni settore, offriamo servizi
